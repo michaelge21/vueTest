@@ -1,14 +1,5 @@
 import { createApp } from "vue";
 
-const firstApp = createApp({
-  data() {
-    return {
-      message: "asdf",
-    };
-  },
-});
-firstApp.mount("#app");
-
 let id = 0;
 const todoApp = createApp({
   data() {
@@ -20,6 +11,7 @@ const todoApp = createApp({
         { id: id++, content: "third Todo", done: false },
         { id: id++, content: "fourth Todo", done: false },
       ],
+      hideCompleted: false,
     };
   },
   methods: {
@@ -35,15 +27,16 @@ const todoApp = createApp({
       this.todoArray = this.todoArray.filter((eachTodo) => eachTodo !== todo);
     },
   },
-  watch: {
-    todoArray: {
-      deep: true,
-      immediate: true,
+  
+  // watch: {
+  //   todoArray: {
+  //     deep: true,
+  //     immediate: true,
 
-      handler() {
-        console.log(this.todoArray, ": and this is the whole array!");
-      },
-    },
-  },
+  //     handler() {
+  //       console.log(this.todoArray, ": and this is the whole array!");
+  //     },
+  //   },
+  // },
 });
 todoApp.mount("#secondApp");

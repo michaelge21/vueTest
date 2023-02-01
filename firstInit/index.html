@@ -8,24 +8,24 @@
 
 <script type="module" src="vue.js" defer></script>
 
-<div id="app">
-  <input type="text" v-model="message" />
-
-  <p>{{ message }}</p>
-</div>
-
 <div id="secondApp">
+  {{todoArray}}
   <form @submit.prevent="addItem">
     <input type="text" v-model="todoText" />
     <button>add todo</button>
   </form>
   <ul>
     <li v-for="indTodo in todoArray" :key="indTodo.id">
-      {{ indTodo.content }} <button @click="deleteItem(indTodo)">x</button>
+      <input type="checkbox" v-model="indTodo.done">
+      {{ indTodo.content }} 
+      <button @click="deleteItem(indTodo)">x</button>
       <!-- yes, the naming of your "indTodo" matters!
     if you name it as "todo", or whatever, you can pass it in as a parameter to buttons and stuff INSIDE OF THE LOOP! -->
     </li>
   </ul>
+  <button @click="hideCompleted = !hideCompleted">
+    {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+  </button>
 </div>
 
 <style>
