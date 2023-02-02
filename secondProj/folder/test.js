@@ -1,0 +1,1 @@
+export const bruh = "this is a string saying 'bruh'"
