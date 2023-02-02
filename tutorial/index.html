@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>hey! welcome to this vue test.</h1>
+      <p>this is paragraph one, uneditable.</p>
+      <div id="app" v-cloak>
+        <p>
+          let's use this div to make some dynamic changes with vue! if you set
+          things up right, we should see a message pop up when you feed some
+          data into it:
+        </p>
+        <p>{{ makeUpperCase(message) }}</p>
+
+        <label for="message">
+          <input type="text" id="message" v-model="message" />
+        </label>
+      </div>
+    </main>
+  </body>
+</html>
