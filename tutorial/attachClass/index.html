@@ -19,8 +19,21 @@
           v-model="isPurple"
         />
       </label>
+      <br />
 
-      <div class="circle" :class="circle_classes">a circle</div>
+      <label for="numInput">
+        <input
+          type="number"
+          name="numberInput"
+          id="numInput"
+          placeholder="input size in digits here!"
+          v-model="size"
+        />
+      </label>
+
+      <div class="circle" :class="circle_classes" :style="changeSize">
+        a circle
+      </div>
     </div>
   </body>
 </html>
