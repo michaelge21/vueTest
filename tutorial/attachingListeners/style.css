@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.container > li:nth-child(odd) {
+  background-color: grey;
+  flex: 1 400px;
+}
+
+.container > li {
+  flex: 1 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s;
+}
+
+.container > li:first-child {
+  position: relative;
+}
+
+.inner {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 80%;
+  background-color: green;
+  color: pink;
+
+  list-style: none;
+}
+
+li:first-child:hover .inner {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}

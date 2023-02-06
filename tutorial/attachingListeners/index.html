@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="container">
+      <li>
+        <p><a href="#">HOME</a></p>
+        <ul class="inner">
+          <li>test content</li>
+          <li>test content</li>
+          <li>test content</li>
+          <li>test content</li>
+        </ul>
+      </li>
+      <li>
+        <p><a href="#">ABOUT</a></p>
+      </li>
+      <li>
+        <p><a href="#">CONTACT</a></p>
+      </li>
+      <li>
+        <p><a href="#">DONATE</a></p>
+      </li>
+      <li>
+        <p><a href="#">filler1</a></p>
+      </li>
+      <li>
+        <p><a href="#">filler2</a></p>
+      </li>
+    </ul>
+
+    <div id="app">
+      <p>{{ count }}</p>
+      <button @click="increment">increment</button>
+      <button @click="count--">decrement</button>
+      <button @click="multiply('this message is in-console!', $event)">
+        multiply
+      </button>
+    </div>
+  </body>
+</html>
