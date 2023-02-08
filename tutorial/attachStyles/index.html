@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="changeColor">click me to switch colors</button>
+      <p :class ="color">the current color is {{ color }}</p>
+
+      <button @click="clickSwitch">click me for a different implementation of a color switcher</button>
+      <p :class="{blue: isClicked}">filler text!</p>
+    </div>
+  </body>
+</html>

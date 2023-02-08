@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="toggleIsClicked">woah!</button>
+      
+      <p v-if="isClicked">displaying v-if content</p>
+      <p v-else>dislaying v-else content</p>
+      
+      <hr>
+<label for="unlock">type in the password to reveal the text! only "1234" will work.
+      <input type="text" name="" id="unlock" v-model="password">
+    </label>
+
+    <p v-if="password == 1234">congrats! you got the password in correctly.</p>
+    <p v-else>aw. the password aint right yet. you inputted {{ password }}</p>
+    </div>
+  </body>
+</html>
