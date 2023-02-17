@@ -35,7 +35,6 @@ main {
   height: 420px;
   max-width: 768px;
   margin: 0 auto;
-  font-family: monospace, sans-serif;
   font-size: 22px;
 }
 main label {

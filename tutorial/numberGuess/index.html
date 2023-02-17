@@ -13,7 +13,23 @@
 
   <body>
     <main>
-      <div id="app"></div>
+      <div id="app">
+        <h2>number guessing game</h2>
+        <p>you get 6 guesses. remember your binary searches? :)</p>
+
+        <label for="guessInput">
+          <input
+            type="number"
+            min="0"
+            max="100"
+            id="guessInput"
+            v-model="input"
+          />
+          <button type="submit" @click.prevent="submit">
+            submit your guess
+          </button>
+        </label>
+      </div>
     </main>
 
     <script src="https://unpkg.com/css-doodle@0.6.1/css-doodle.min.js"></script>
