@@ -11,17 +11,22 @@
   <body>
     <div id="app">
       <button @click="toggleIsClicked">woah!</button>
-      
-      <p v-if="isClicked">displaying v-if content</p>
-      <p v-else>dislaying v-else content</p>
-      
-      <hr>
-<label for="unlock">type in the password to reveal the text! only "1234" will work.
-      <input type="text" name="" id="unlock" v-model="password">
-    </label>
 
-    <p v-if="password == 1234">congrats! you got the password in correctly.</p>
-    <p v-else>aw. the password aint right yet. you inputted {{ password }}</p>
+      <p v-if="isClicked">displaying v-if content</p>
+      <template v-else>
+        <p>dislaying v-else content</p>
+        <p>i also want to display this!</p>
+      </template>
+      <hr />
+      <label for="unlock"
+        >type in the password to reveal the text! only "1234" will work.
+        <input type="text" name="" id="unlock" v-model="password" />
+      </label>
+
+      <p v-if="password == 1234">
+        congrats! you got the password in correctly.
+      </p>
+      <p v-else>aw. the password aint right yet. you inputted {{ password }}</p>
     </div>
   </body>
 </html>
