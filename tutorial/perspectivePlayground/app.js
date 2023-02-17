@@ -16,10 +16,7 @@ Vue.createApp({
     },
     copy() {
       let text = `transform:${this.box.transform};`;
-      navigator.clipboard
-        .writeText(text)
-        .then(alert("css has been copied!"))
-        .catch(alert("uh oh. something went wrong. please reload the page!"));
+      navigator.clipboard.writeText(text).then(alert("css has been copied!"));
     },
   },
   computed: {
