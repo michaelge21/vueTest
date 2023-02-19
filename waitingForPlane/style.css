@@ -1,0 +1,36 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+ul > li {
+    flex: 1 200px;    
+    border: 3px green solid;
+}
+
+ul.first > li img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+ul.second > li:nth-child(-n+4) {
+    background-image: url(food/2019Food1.jpg);
+    background-size: cover;
+    flex: 1 400px;
+    height: 60vh;
+}
+
+ul.second > li:nth-child(n+5):nth-child(-n+8) {
+    background-image: url(food/2019Food2.jpeg);
+    background-size: cover;
+    height: 60vh;
+}
