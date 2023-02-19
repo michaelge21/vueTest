@@ -1,0 +1,83 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  color: #8d81f3;
+  font-family: "Roboto Slab", serif;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background: #261c33;
+}
+
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#app {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#app section {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+label[for="guessInput"] {
+  margin: 20px;
+}
+
+label[for="guessInput"] input {
+  border: none;
+  width: 50px;
+  font-size: large;
+  background-color: #8d81f3;
+  color: white;
+}
+
+#app section ol {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#app section ol li {
+  margin: 10px;
+}
+
+#app section ol li:nth-child(even) {
+  color: white;
+}
+
+button {
+  background-color: #8d81f3;
+  color: #fff;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #564bbb;
+}
+
+button:active {
+  background-color: white;
+  color: #8d81f3;
+}

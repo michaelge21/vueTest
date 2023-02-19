@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>num guess game</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <div id="app">
+
+        <section>
+          <h1>number guessing game, built in Vue3</h1>
+          <h3>
+            you get 7 guesses. the random number goes 1 through 100. remember your
+            binary searches? :)
+          </h3>
+        </section>
+
+        <section>
+          <label for="guessInput">
+            place your guess...
+            <input
+              type="number"
+              min="1"
+              max="100"
+              id="guessInput"
+              v-model="input"
+            />
+          </label>
+          <button type="submit" @click.prevent="submit">submit your guess</button>
+        </section>
+
+        <section>
+          <p>here's your prior guesses:</p>
+          <ol>
+            <li v-for="guess in priorGuesses">{{ guess }}</li>
+          </ol>
+        </section>
+
+        <section v-cloak>
+          <div v-if="status === 'victory'">
+            <p>you won!</p>
+            <button @click.prevent="gameReset()">reset da game</button>
+          </div>
+          <div v-if="status === 'gameOver'">
+            <p>didn't guess right... the value was {{ numberToGuess }}. do you even binary tree search, bro?</p>
+            <button @click.prevent="gameReset()">reset da game</button>
+          </div>
+          <div v-if="status === 'halfVictory'">
+            <p>yeah yeah, good for you, you typed {{ numberToGuess }} in. are you... gonna reset the game?</p>
+            <button @click.prevent="gameReset()">... please?</button>
+          </div>
+        </section>
+      
+    </main>
+
+    <script src="https://unpkg.com/css-doodle@0.6.1/css-doodle.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
