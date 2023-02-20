@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Guessing Game</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Number Guessing Game</h1>
+      <div v-if="!gameOver">
+        <p>Guess a number between 1 and 100:</p>
+        <input
+          type="number"
+          v-model.number="userGuess"
+          :disabled="guessesLeft === 0"
+        />
+        <button @click="checkGuess()" :disabled="guessesLeft === 0">
+          Submit
+        </button>
+        <p v-if="guessesLeft > 0">You have {{ guessesLeft }} guesses left.</p>
+        <p v-if="feedback">{{ feedback }}</p>
+      </div>
+      <div v-else>
+        <p v-if="correctGuess">Congratulations! You guessed {{ guess }}.</p>
+        <p v-else>Sorry, the number was {{ guess }}.</p>
+        <button @click="startGame()">Play Again</button>
+      </div>
+      <button @click="reset()" v-if="gameOver">Reset</button>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            low: 1,
+            high: 100,
+            guess: null,
+            correctGuess: false,
+            gameOver: false,
+            userGuess: null,
+            guessesLeft: 7,
+            feedback: null,
+          };
+        },
+        methods: {
+          startGame() {
+            this.low = 1;
+            this.high = 100;
+            this.guess = Math.floor(Math.random() * 100) + 1;
+            this.correctGuess = false;
+            this.gameOver = false;
+            this.userGuess = null;
+            this.guessesLeft = 7;
+            this.feedback = null;
+          },
+          checkGuess() {
+            if (this.userGuess === this.guess) {
+              this.correctGuess = true;
+            } else if (this.userGuess > this.guess) {
+              this.high = this.userGuess - 1;
+              this.feedback = "Too high!";
+            } else {
+              this.low = this.userGuess + 1;
+              this.feedback = "Too low!";
+            }
+            if (this.high < this.low) {
+              this.correctGuess = false;
+            }
+            if (
+              this.correctGuess ||
+              this.high < this.low ||
+              this.guessesLeft === 1
+            ) {
+              this.gameOver = true;
+            }
+            this.guessesLeft--;
+          },
+          reset() {
+            this.startGame();
+          },
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
