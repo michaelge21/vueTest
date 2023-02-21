@@ -5,6 +5,17 @@
       <li>Initiatives</li>
       <li>TransformAsian</li>
       <li>Contact</li>
+      <li>
+        <label for="search">
+          <input
+            id="search"
+            type="text"
+            placeholder="search here"
+            v-model="searchQuery"
+          />
+        </label>
+        <button @click="submitSearch">submit</button>
+      </li>
     </ul>
   </nav>
 </template>
@@ -14,8 +25,15 @@ export default {
   name: "NavBar",
   data() {
     return {
-      msg: "hello world!",
+      searchQuery: "",
     };
+  },
+  methods: {
+    submitSearch() {
+      alert(
+        "woah! you clicked! and looks like the message was " + this.searchQuery
+      );
+    },
   },
 };
 </script>
@@ -27,24 +45,26 @@ export default {
   box-sizing: border-box;
 }
 
-ul,
-h1,
-h2,
-h3,
-h4,
-li {
-  padding: 0;
-  margin: 0;
+nav {
+  background-color: rebeccapurple;
 }
 ul {
+  height: 20vh;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
   list-style: none;
+
+  color: white;
 }
 
 ul li:first-child {
   margin-right: auto;
+}
+
+ul li {
+  margin: 0 15px;
 }
 </style>
